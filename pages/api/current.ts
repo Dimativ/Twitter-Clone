@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     } // limit to get only
 
     try {
-        const {currentUser} = await serverAuth(req);
+        const {currentUser} = await serverAuth(req, res);
 
         return res.status(200).json(currentUser);
         /* use serverAuth to get the current session from the request which we are getting
